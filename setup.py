@@ -5,7 +5,7 @@ https://github.com/pypa/sampleproject
 """
 
 # Always prefer setuptools over distutils
-from os import path
+from os import path, environ
 
 from setuptools import setup, find_packages
 
@@ -13,6 +13,10 @@ here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
 
+if environ.get('CI_COMMIT_TAG'):
+    version = environ['CI_COMMIT_TAG']
+else:
+    version = environ['CI_JOB_ID']
 
 setup(
     name='PB200',
@@ -20,7 +24,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.2',
+    version=version,
 
     description='Read, save and send by Mqtt data from Airmar PB200',
     long_description='Read, save and send by Mqtt data from Airmar PB200',
