@@ -1,0 +1,21 @@
+service:
+  path_pidfile: ./tests/logs/
+
+database:
+  database: boyadb
+  user: username
+  password: password
+  host: localhost
+
+serial:
+  port: /dev/ttyUSB0
+  baudrate: 4800
+  stopbits: 1
+  parity: N
+  bytesize: 8
+  timeout: 0
+
+mqtt:
+  broker_url: iot.eclipse.org
+  client_id: granadilla-buoy-weather-station
+  topic_data: redmic/activity/1284

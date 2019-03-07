@@ -1,0 +1,24 @@
+service:
+    path_pidfile: /var/run/buoy/
+    start_timeout: 1
+
+database:
+    database: boyadb
+    user: username
+    password: password
+    host: localhost
+
+serial:
+    port: /dev/weather_station
+    baudrate: 4800
+    stopbits: 1
+    parity: N
+    bytesize: 8
+    timeout: 0
+
+mqtt:
+    broker_url: redmic.net
+    client_id: granadilla-buoy-weather-station
+    topic_data: redmic/activity/1284
+    username: username
+    password: changeme
