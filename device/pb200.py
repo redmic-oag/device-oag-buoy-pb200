@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import logging.config
+
 from datetime import datetime, timezone
 
 import pynmea2
@@ -50,8 +52,8 @@ class PB200Daemon(PB200, Daemon):
 
 
 def run(config_buoy: str, config_log_file: str):
-    logging.config.dictConfig(load_config.load_config_logger(path_config=config_log_file))
-    buoy_config = load_config.load_config(path_config=config_buoy)
+    logging.config.dictConfig(load_config_logger(path_config=config_log_file))
+    buoy_config = load_config(path_config=config_buoy)
 
     daemon = PB200Daemon(name=DEVICE_NAME, config=buoy_config)
     daemon.start()

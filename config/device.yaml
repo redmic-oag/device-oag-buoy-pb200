@@ -17,7 +17,7 @@ serial:
     timeout: 0
 
 mqtt:
-    broker_url: redmic.net
+    broker_url: redmic.es
     client_id: granadilla-buoy-weather-station
     topic_data: redmic/activity/1284
     username: username
