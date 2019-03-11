@@ -18,4 +18,4 @@ serial:
 mqtt:
   broker_url: iot.eclipse.org
   client_id: granadilla-buoy-weather-station
-  topic_data: redmic/activity/1284
+  topic_data: redmic/activity/1286

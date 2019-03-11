@@ -1,6 +1,6 @@
 import unittest
 
-from device.pb200 import PB200Daemon
+from pb200.pb200 import PB200Daemon
 from buoy.tests.base_device_tests import BaseDeviceTest
 
 

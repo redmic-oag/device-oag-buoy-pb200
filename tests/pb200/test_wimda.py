@@ -7,7 +7,7 @@ from uuid import uuid4
 import pynmea2
 from nose.tools import eq_, ok_
 
-from device.pb200 import WIMDA
+from pb200.pb200 import WIMDA
 
 
 class TestProtocolNMEA0183(unittest.TestCase):

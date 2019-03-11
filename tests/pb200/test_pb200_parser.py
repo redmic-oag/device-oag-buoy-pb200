@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 from nose.tools import ok_, eq_
 
-from device.pb200 import PB200Reader, WIMDA
+from pb200.pb200 import PB200Reader, WIMDA
 
 
 class TestPB200Reader(unittest.TestCase):
