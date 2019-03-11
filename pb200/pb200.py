@@ -12,7 +12,7 @@ from buoy.base.service.daemon import Daemon
 from buoy.base.utils.argsparse import parse_args
 from buoy.base.utils.config import *
 from buoy.base.database import DeviceDB
-from device.nmea0183.wimda import WIMDA
+from pb200.nmea0183.wimda import WIMDA
 
 
 logger = logging.getLogger(__name__)

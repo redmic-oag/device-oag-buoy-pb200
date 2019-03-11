@@ -1,4 +1,4 @@
-from device.nmea0183.wimda import WIMDA
+from pb200.nmea0183.wimda import WIMDA
 from buoy.tests.item_db_to_send_thread import DBToSendThreadTest
 
 

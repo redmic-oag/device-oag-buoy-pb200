@@ -1,7 +1,7 @@
 import unittest
 from datetime import datetime, timezone
 from buoy.tests.item_save_thread import ItemSaveThreadTest
-from device.nmea0183.wimda import WIMDA
+from pb200.nmea0183.wimda import WIMDA
 
 
 def get_item():
