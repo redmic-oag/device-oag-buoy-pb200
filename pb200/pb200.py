@@ -60,7 +60,7 @@ def run(config_buoy: str, config_log_file: str):
 
 
 def main():
-    args = parse_args()
+    args = parse_args(path_config='/etc/buoy/pb200')
     run(config_buoy=args.config_file, config_log_file=args.config_log_file)
 
 
