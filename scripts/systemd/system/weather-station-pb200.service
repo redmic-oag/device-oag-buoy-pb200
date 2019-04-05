@@ -1,16 +1,15 @@
 [Unit]
-Description=Weather Station - PB200
-After=multi-user.target dev-weather_station_pb200.device
-BindsTo=dev-weather_station.device
+Description=Current Meter - ACMPlus
+After=multi-user.target dev-current_meter_acmplus.device
+BindsTo=dev-current_meter_acmplus.device
 
 [Service]
 Type=idle
-ExecStart=/usr/local/bin/weather-station-pb200
-PIDFile=/var/run/buoy/weather-station-pb200.pid
-ExecStop=/usr/bin/pkill -15 /var/run/buoy/weather-station-pb200.pid
+ExecStart=/usr/local/bin/current-meter-acmplus
+PIDFile=/var/run/buoy/acmplus.pid
+ExecStop=/usr/bin/pkill -15 /var/run/buoy/acmplus.pid
 TimeoutStopSec=5
 Restart=on-failure
 
 [Install]
-WantedBy=dev-weather_station_pb200.device
-
+WantedBy=dev-current_meter_acmplus.device

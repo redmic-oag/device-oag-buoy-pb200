@@ -41,11 +41,13 @@ class PB200(Device):
 
 
 class PB200Daemon(PB200, Daemon):
-    def __init__(self, name, config):
-        db = DeviceDB(db_config=config['database'], db_tablename=name, cls_item=WIMDA)
+    def __init__(self, name, **kwargs):
+        db_conf = kwargs.pop('database')
+        service_conf = kwargs.pop('service')
+        db = DeviceDB(db_config=db_conf, db_tablename=name, cls_item=WIMDA)
 
-        Daemon.__init__(self, daemon_name=DAEMON_NAME, daemon_config=config['service'])
-        PB200.__init__(self, serial_config=config['serial'], db=db, mqtt=config['mqtt'])
+        Daemon.__init__(self, daemon_name=DAEMON_NAME, daemon_config=service_conf)
+        PB200.__init__(self, db=db, **kwargs)
 
     def before_stop(self):
         self.disconnect()
@@ -55,7 +57,7 @@ def run(config_buoy: str, config_log_file: str):
     logging.config.dictConfig(load_config_logger(path_config=config_log_file))
     buoy_config = load_config(path_config=config_buoy)
 
-    daemon = PB200Daemon(name=DEVICE_NAME, config=buoy_config)
+    daemon = PB200Daemon(name=DEVICE_NAME, **buoy_config)
     daemon.start()
 
 

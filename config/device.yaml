@@ -14,7 +14,10 @@ serial:
     stopbits: 1
     parity: N
     bytesize: 8
-    timeout: 0
+    timeout:
+
+reader:
+    interval: 1m
 
 mqtt:
     broker_url: redmic.es
