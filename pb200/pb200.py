@@ -57,7 +57,7 @@ def run(config_buoy: str, config_log_file: str):
     logging.config.dictConfig(load_config_logger(path_config=config_log_file))
     buoy_config = load_config(path_config=config_buoy)
 
-    daemon = PB200Daemon(name=DEVICE_NAME, config=buoy_config)
+    daemon = PB200Daemon(name=DEVICE_NAME, **buoy_config)
     daemon.start()
 
 
